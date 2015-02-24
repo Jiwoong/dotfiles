@@ -21,6 +21,9 @@
   rename-branch = !sh -c 'old=$(git current-branch) && git branch -m $old $1 && git push origin --set-upstream $1 && git push origin --delete $old' -
   st = status
   up = !git fetch origin && git rebase origin/master
+  l = log --pretty=colored
+[pretty]
+  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -32,3 +35,6 @@
   prune = true
 [include]
   path = ~/.gitconfig.local
+[user]
+  name = Jiwoong Heo
+  email = jiwoong.heo@gmail.com
