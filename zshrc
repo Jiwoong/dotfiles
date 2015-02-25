@@ -5,8 +5,24 @@ git_prompt_info() {
     echo " %{$fg_bold[green]%}$current_branch%{$reset_color%}"
   fi
 }
+parse_git_dirty() {
+  local STATUS=''
+  local FLAGS
+  FLAGS=('--porcelain')
+
+  FLAGS+='--untracked-files=no'
+
+  STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+
+  if [[ -n $STATUS ]]; then
+    echo " %{$fg_bold[red]%}✗%{$reset_color%}"
+  else
+    echo ""
+  fi
+
+}
 setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info)$(parse_git_dirty) %# '
 
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
