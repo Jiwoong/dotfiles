@@ -43,15 +43,11 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-  " Enable spellchecking for Markdown
-  autocmd FileType markdown setlocal spell
-
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-  " Automatically wrap at 72 characters and spell check git commit messages
+  " Automatically wrap at 72 characters
   autocmd FileType gitcommit setlocal textwidth=72
-  autocmd FileType gitcommit setlocal spell
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
@@ -79,7 +75,9 @@ if executable('ag')
 endif
 
 " Color scheme
-colorscheme github
+let base16colorspace=256
+set background=dark
+colorscheme base16-railscasts
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -125,6 +123,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
+
+let g:rspec_command = "Dispatch rspec {spec}"
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
@@ -148,10 +149,6 @@ map <C-i> :NERDTreeToggle<CR>
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
-" Set spellfile to location that is guaranteed to exist, can be symlinked to
-" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Always use vertical diffs
 set diffopt+=vertical

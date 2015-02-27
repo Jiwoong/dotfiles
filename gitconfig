@@ -35,8 +35,4 @@
   prune = true
 [include]
   path = ~/.gitconfig.local
-[user]
-  name = Jiwoong Heo
-  email = jiwoong.heo@gmail.com
-[credential]
-  helper = osxkeychain
+
