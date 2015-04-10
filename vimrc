@@ -1,7 +1,3 @@
-" Use Vim settings, rather then Vi settings. This setting must be as early as
-" possible, as it has side effects.
-set nocompatible
-
 " Leader
 let mapleader = " "
 
@@ -68,7 +64,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -147,6 +143,9 @@ map <C-i> :NERDTreeToggle<CR>
 " NERDCommenter
 nmap <Leader># :call NERDComment(0, "invert")<cr>
 vmap <Leader># :call NERDComment(0, "invert")<cr>
+
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
