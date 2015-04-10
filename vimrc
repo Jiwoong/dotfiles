@@ -77,7 +77,7 @@ endif
 " Color scheme
 let base16colorspace=256
 set background=dark
-colorscheme base16-railscasts
+colorscheme base16-monokai
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -125,8 +125,6 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 
-let g:rspec_command = "Dispatch rspec {spec}"
-
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
 
@@ -149,10 +147,6 @@ map <C-i> :NERDTreeToggle<CR>
 " NERDCommenter
 nmap <Leader># :call NERDComment(0, "invert")<cr>
 vmap <Leader># :call NERDComment(0, "invert")<cr>
-
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " Always use vertical diffs
 set diffopt+=vertical
