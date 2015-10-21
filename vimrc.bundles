@@ -26,6 +26,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
+Plugin 'derekwyatt/vim-scala'
 
 Plugin 'scrooloose/nerdtree'
 
