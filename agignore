@@ -1,5 +1,11 @@
-log
-tags
-tmp
 .git/
+<<<<<<< HEAD
 node_modules/
+=======
+tags
+/bower_components/
+/log
+/node_modules/
+/tmp
+/vendor
+>>>>>>> upstream/master
