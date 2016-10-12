@@ -22,7 +22,7 @@ parse_git_dirty() {
 
 }
 setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info)$(parse_git_dirty) %# '
+export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info)$(parse_git_dirty) 🐳  '
 
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)

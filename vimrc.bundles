@@ -28,9 +28,15 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 Plugin 'bling/vim-airline'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-dispatch'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
+Plugin 'fatih/vim-go'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'davidhalter/jedi-vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

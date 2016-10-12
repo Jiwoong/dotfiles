@@ -78,9 +78,8 @@ if executable('ag')
 endif
 
 " Color scheme
-let base16colorspace=256
-set background=dark
-colorscheme badwolf
+let g:seoul256_background=235
+colorscheme seoul256
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -89,6 +88,7 @@ set textwidth=80
 set colorcolumn=+1
 
 " Numbers
+set relativenumber
 set number
 set numberwidth=5
 
@@ -130,10 +130,10 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec mappings
-" nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-" nnoremap <Leader>s :call RunNearestSpec()<CR>
-" nnoremap <Leader>l :call RunLastSpec()<CR>
-" nnoremap <Leader>a :call RunAllSpecs()<CR>
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
 
 " Run commands that require an interactive shell
 " nnoremap <Leader>r :RunInInteractiveShell<space>
